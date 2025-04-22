@@ -105,7 +105,13 @@ describe('calculateAverage', () => {
 describe('calculateFactorial', () => {
 
     it('should return NaN if argument provided is not a number', () => {
+        expect(calculateFactorial(null)).toBe(NaN);
         expect(calculateFactorial(NaN)).toBe(NaN);
+        expect(calculateFactorial("string")).toBe(NaN);
+        expect(calculateFactorial(false)).toBe(NaN);
+        expect(calculateFactorial(undefined)).toBe(NaN);
+        expect(calculateFactorial({})).toBe(NaN);
+        expect(calculateFactorial([])).toBe(NaN);
     })
 
     it('should return 1 if argument is 0', () => expect(calculateFactorial(0)).toBe(1));
